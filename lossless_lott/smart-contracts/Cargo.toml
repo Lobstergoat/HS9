@@ -1,0 +1,18 @@
+[package]
+name = "smart-contracts"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"] # Required for NEAR smart contracts
+
+[patch.crates-io]
+parity-secp256k1 = { git = "https://github.com/paritytech/rust-secp256k1" }
+
+[dependencies]
+near-sdk = "4.0.0" # Latest version as of knowledge cutoff
+near-sdk-macros = "4.0.0"
+getrandom = { version = "0.2.15", features = ["js"] }
+
+# Add this if using randomness (for selecting winners)
+rand = "0.8.5"
